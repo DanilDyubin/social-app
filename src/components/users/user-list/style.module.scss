@@ -1,0 +1,14 @@
+.user-list {
+  background-color: var(--background-theme-default);
+  color: var(--text-theme-default);
+
+  &--title {
+    margin-bottom: 15px;
+  }
+
+  &--wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

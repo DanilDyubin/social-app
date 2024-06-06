@@ -1,0 +1,9 @@
+.menu {
+  background-color: var(--background-theme-default);
+
+  &-list {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}

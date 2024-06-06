@@ -1,0 +1,16 @@
+.add-post {
+  &--wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &--btn {
+    width: 100px;
+    border: none;
+    border-radius: var(--border-radius-main);
+    background-color: #e4f1ff;
+    color: var(--color-blue);
+    cursor: pointer;
+  }
+}

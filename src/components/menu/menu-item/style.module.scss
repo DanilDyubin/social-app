@@ -1,0 +1,21 @@
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px;
+  background-color: var(--background-theme-default);
+  color: var(--text-theme-default);
+  cursor: pointer;
+  border-radius: var(--border-radius-main);
+  &:hover {
+    background-color: var(--color-gray);
+  }
+
+  &--icon {
+    // font-size: 16px;
+  }
+
+  &--title {
+    //   margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,53 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  background-color: var(--body-theme-default); // rgb(237, 238, 240)
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1260px;
+}
+
+.layout {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 2.5fr 8.5fr 3fr;
+  align-items: start;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}
