@@ -1,40 +1,58 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { IPost } from '../../types';
+import { collection, query, where, onSnapshot } from 'firebase/firestore';
+import { db } from '../../firebase';
+import ComponentsLayout from '../layout/components-layout/ComponentsLayout';
+import Post from '../post/Post';
 
 import style from './style.module.scss';
 
-interface IPosts {
-  posts: IPost[];
-}
+// interface IPosts {
+//   posts: IPost[];
+// }
 
-const Posts: React.FC<IPosts> = ({ posts }) => {
+const Posts: React.FC = () => {
+  const [posts, setPosts] = useState<IPost[]>([
+    {
+      author: {
+        id: '',
+        avatar: '',
+        name: '',
+      },
+      createdAt: '',
+      content: '',
+      images: '',
+    },
+  ]);
+
+  useEffect(() => {
+    // const q = query(collection(db, 'posts'));
+    const unsubscribe = onSnapshot(collection(db, 'posts'), (doc) => {
+      const postsArr: IPost[] = [];
+      doc.forEach((d: any) => {
+        postsArr.push(d.data());
+        // setPosts((prev) => [...prev, d.data()]);
+        // console.log(`data content ${d.data().content}`);
+      });
+      setPosts(postsArr);
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+  console.log(posts);
+
   return (
-    <>
-      {posts.map((post) => {
+    <div className={style.posts}>
+      {posts.map((post: IPost, index) => {
         return (
-          <article key={post.author._id}>
-            <Link to={`/profile/${post.author._id}`}>
-              <div className={style['user-item']}>
-                <div className={style['user-item--cover']}>
-                  <img className={style['user-item--img']} src={post.author.avatar} alt="avatar" />
-                </div>
-                <div>
-                  <div className="name">{post.author.name}</div>
-                  <div>{post.createdAt}</div>
-                </div>
-              </div>
-            </Link>
-            {post?.images?.length && (
-              <div className="images">
-                {post.images.map((image) => {
-                  return <img src={image} alt="" key={image} />;
-                })}
-              </div>
-            )}
-          </article>
+          <ComponentsLayout key={index}>
+            <Post post={post} key={post.author.id} />
+          </ComponentsLayout>
         );
       })}
-    </>
+    </div>
   );
 };
 

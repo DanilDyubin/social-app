@@ -4,7 +4,6 @@
   align-items: center;
   gap: 10px;
   flex-grow: 1;
-  //   height: 40px;
   border-radius: var(--border-radius-main);
   background-color: var(--color-gray);
 
@@ -15,10 +14,11 @@
   &-input {
     display: flex;
     flex-grow: 1;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 300;
     border: none;
     background-color: transparent;
     outline: none;
+    color: var(--text-theme-default);
   }
 }

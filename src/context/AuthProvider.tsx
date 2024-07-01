@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       setUser(
         authUser
           ? {
-              _id: authUser?.uid,
+              id: authUser?.uid,
               avatar: users[1].avatar,
               name: authUser?.displayName || '',
             }

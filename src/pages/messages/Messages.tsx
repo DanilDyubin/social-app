@@ -1,5 +1,5 @@
 const Messages = () => {
-  return <div>Messages</div>;
+  return <div>No messages yet</div>;
 };
 
 export default Messages;

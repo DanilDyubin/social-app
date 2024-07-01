@@ -1,0 +1,48 @@
+.user {
+  padding: var(--padding-main);
+  border-radius: var(--border-radius-main);
+  background-color: var(--body-theme-light);
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  &__name {
+    color: var(--color-black);
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__email {
+    font-size: 12px;
+    font-weight: 400;
+    color: #838385;
+  }
+
+  &__statistics {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-numbers {
+      color: var(--color-black);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    &-name {
+      font-size: 12px;
+      font-weight: 400;
+      color: #838385;
+    }
+  }
+}

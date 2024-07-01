@@ -1,0 +1,136 @@
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  height: 100vh;
+  background: url('../../assets/img/login-bg1.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .content {
+    width: 70%;
+    min-height: 600px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: transparent;
+    background: rgba(0, 0, 0, 0.6); // Make sure this color has an opacity of less than 1
+    backdrop-filter: blur(4px); // This be the blur
+    // background: rgba(0, 0, 0, 0.6); // border: 5px solid white;
+    &__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 50%;
+      padding: 30px;
+      background-color: transparent;
+      color: white;
+
+      &--top {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 300;
+      }
+
+      &--line {
+        width: 80px;
+        height: 1px;
+        background-color: #fff;
+      }
+
+      &--title {
+        font-size: 3vw;
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px;
+      width: 50%;
+      background-color: white;
+      border-radius: 20px;
+
+      &--middle {
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+      }
+
+      &--title {
+        font-size: 3vw;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      &--text {
+        font-size: 1vw;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      &--bottom {
+        font-size: 1vw;
+        font-weight: 300;
+        & span {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    &__label {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__title {
+      font-size: 1vw;
+      font-weight: 300;
+      margin-bottom: 5px;
+    }
+
+    &__input {
+      flex-grow: 1;
+      width: 100%;
+      height: 45px;
+      padding: 15px;
+      border: none;
+      border-radius: var(--border-radius-main);
+      background-color: var(--color-gray);
+    }
+
+    &__btn {
+      flex-grow: 1;
+      width: 100%;
+      height: 45px;
+      border: none;
+      border-radius: var(--border-radius-main);
+      background-color: var(--color-blue);
+      color: var(--color-white);
+      margin-top: 10px;
+      font-size: 1vw;
+      font-weight: 400;
+      cursor: pointer;
+      transition: 0.3s linear;
+      &:hover {
+        box-shadow: #003cc5 0 0px 0px 45px inset;
+      }
+      &:active {
+        transform: translate(0, 10px);
+      }
+    }
+  }
+}

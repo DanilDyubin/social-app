@@ -1,14 +1,22 @@
-import { Link } from 'react-router-dom';
-import avatar from '../../../assets/img/avatar.jpg';
+import { useSelector } from 'react-redux';
+import defaultImg from '../../../assets/img/no-image.png';
 import style from './style.module.scss';
 
-const User = ({ user }: any) => {
+const User = () => {
+  const userObj = useSelector((state: any) => state.user);
+  // const { user } = useSelector((state: any) => state.user);
+  console.log(userObj);
   return (
-    <Link to={`/profile/`}>
+    <div>
       <div className={style.user}>
-        <img className={style['user-img']} src={avatar} alt="avatar" />
+        <img
+          className={style['user-img']}
+          src={!userObj.user.photoURL ? defaultImg : userObj.user.photoURL}
+          // src={!user.photoURL ? defaultImg : user.photoURL}
+          alt="avatar"
+        />
       </div>
-    </Link>
+    </div>
   );
 };
 

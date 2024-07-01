@@ -8,7 +8,7 @@ const UserList = () => {
       <h4 className={style['user-list--title']}>Friends online</h4>
       <div className={style['user-list--wrapper']}>
         {users.map((user) => {
-          return <UserItem key={user._id} user={user} />;
+          return <UserItem key={user.id} user={user} />;
         })}
       </div>
     </div>

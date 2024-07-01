@@ -14,7 +14,7 @@ const Menu = () => {
           return (
             <li
               className={style['menu-list--item']}
-              key={item.link}
+              key={item.title}
               onClick={() => navigate(item.link)}>
               <MenuItem item={item} />
             </li>
