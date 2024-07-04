@@ -12,7 +12,6 @@ const User = () => {
         <img
           className={style['user-img']}
           src={!userObj.user.photoURL ? defaultImg : userObj.user.photoURL}
-          // src={!user.photoURL ? defaultImg : user.photoURL}
           alt="avatar"
         />
       </div>

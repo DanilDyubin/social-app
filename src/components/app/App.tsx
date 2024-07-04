@@ -13,6 +13,7 @@ import Home from '../../pages/home/Home';
 // import Auth from '../../pages/auth/Auth1';
 import { useAuth } from '../../hooks/use-auth';
 import Messages from '../../pages/messages/Messages';
+import Chat from '../../components/chat/Chat';
 import Conversation from '../../pages/messages/Conversation';
 import Friends from '../../pages/friends/Friends';
 import Profile from '../../pages/profile/Profile';
@@ -36,8 +37,13 @@ function App() {
         },
         {
           path: '/messages',
-          element: <Messages />,
+          // element: <Messages />,
+          element: <Chat />,
         },
+        // {
+        //   path: '/chat',
+        //   element: <Chat />,
+        // },
         {
           path: '/message/:id',
           element: <Conversation />,

@@ -51,7 +51,6 @@ const Auth: FC<IAuthProps> = ({ isRegister, title, btnName }) => {
       createUserWithEmailAndPassword(auth, formData.email, formData.password)
         .then(({ user }: any) => {
           // Signed in
-          console.log(user);
           dispatch(
             setUser({
               user: user,

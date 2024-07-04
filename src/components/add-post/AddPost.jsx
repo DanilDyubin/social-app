@@ -20,6 +20,8 @@ const AddPost = () => {
   const [file, setFile] = useState('');
   const [images, setImages] = useState('');
   const [loadImg, setLoadImg] = useState(null);
+  const [comment, setComment] = useState({});
+  const [comments, setComments] = useState([]);
 
   const { user } = useSelector((state) => state.user);
   const date = new Date().toLocaleString('en-US');
@@ -75,6 +77,7 @@ const AddPost = () => {
           content,
           createdAt: date,
           images,
+          comments,
         });
         setContent('');
       } catch (e) {

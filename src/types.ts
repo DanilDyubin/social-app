@@ -17,6 +17,8 @@ export interface IPost {
   createdAt: string;
   content: string;
   images?: string;
+  like?: boolean;
+  likeCounter?: number;
 }
 
 export interface IMenuItem {

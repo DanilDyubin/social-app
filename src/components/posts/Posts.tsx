@@ -23,6 +23,8 @@ const Posts: React.FC = () => {
       createdAt: '',
       content: '',
       images: '',
+      like: false,
+      likeCounter: 0,
     },
   ]);
 
